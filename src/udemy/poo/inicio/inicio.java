@@ -47,7 +47,7 @@ public class inicio extends javax.swing.JFrame {
         
         //obtengo los archivos
         ImagenFondo fondoPantalla = ImagenFondo.imagenFondo();
-        fondoPantalla.configuracion(this.jPanel1, "ArbolDos.gif", "Girl.gif");
+        fondoPantalla.configuracion(this.jPanel1, "ArbolDos.gif", "Girl.gif" );
         
         //añado los archivos a la pantalla
         ((Pantalla) this.jPanel1).getComponente().add(fondoPantalla);

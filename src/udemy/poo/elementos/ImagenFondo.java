@@ -27,6 +27,7 @@ public class ImagenFondo implements Actions{
 
     private Image imagen = null;
     private Image imagenDos = null;
+    //private Image imagenTres = null;
     //voy a usar el patron Singleton
     private Component componente; //componente dinamico
     private int x = -20;
@@ -49,8 +50,10 @@ public class ImagenFondo implements Actions{
         Toolkit herram =  Toolkit.getDefaultToolkit();
         imagen = herram.getImage(getClass().getResource("/udemy/poo/recursos/"+ archivo)); //imagen de fondo
         imagenDos = herram.getImage(getClass().getResource("/udemy/poo/recursos/"+ personaje)); //le asigno el valor de personaje
+        //imagenTres = herram.getImage(getClass().getResource("/udemy/poo/recursos/"+ megaman)); 
         tracker.addImage(imagen, 1); //indice 1
         tracker.addImage(imagenDos, 2);
+        //tracker.addImage(imagenTres, 3);
         
         //espera a que todas las imagenes sean cargadas
         try {
@@ -65,7 +68,8 @@ public class ImagenFondo implements Actions{
     @Override
     public void pintar(Graphics2D g) {
         g.drawImage(imagen, 0, 0, this.componente.getWidth(), this.componente.getHeight(), null);
-        g.drawImage(imagenDos, x+40, 90, 270, 368, null); //redimensiono la imagen en 40x90
+        g.drawImage(imagenDos, x + 40, 90, 270, 368, null); //redimensiono la imagen en 40x90
+        //g.drawImage(imagenTres, x, 230, 50, 50, null); //redimensiono la imagen en 40x90
         
     }
 
@@ -79,6 +83,12 @@ public class ImagenFondo implements Actions{
 
     @Override
     public void calculo() {
+       /* if (x>this.componente.getWidth()+20) {
+            x=-20;
+            
+        }else{
+            x+=4;
+        }*/
     }
     
 }
